@@ -19,12 +19,10 @@ CenterNet的一大優點是"簡單"，其大致计算过程为：图像传入bac
 
 **centernet的优点：**
 1. anchor free的思想让算法的训练和部署都非常整洁，训练时无anchor，检测时无nms。这是centernet的核心想法，简单有效，值得借鉴。nms由于是集合递归的运算，不容易做并行加速，bounding box随着anchor的增加而增加。nms的不同设置会极大影响检测算法的map。
-2. centernet可以做到从输入图像到输出bounding box都并行计算。
+2. centernet可以做到从输入图像到输出bounding box都并行(batch)计算。
 
 **centernet的缺点：**
-1. 很明显resnet不是目前用于检测最好的backbone。在imagenet上，darknet53比resnet101性能接近的情况下速度更快，所以典型情况下yolov3的backbone比centernet是占优势的。centernet完全可以使用更强的backbone达到更高的性能。
-2. centernet缺少FPN等已经证实对于检测非常有效的方法，可以尝试加入。
-3. centernet有个隐含的缺点是，该算法默认一个输出点只有一个center，但实际上一个输出点有多个center是可能的。但在统计过coco数据集后发现，这种情况出现的数量极少，故这种设置对map的性能影响很低。作者也尝试了一个输出点多个center的实验，结果性能没有明显区别。
+1. centernet有个隐含的缺点是，该算法默认一个输出点只有一个center，但实际上一个输出点有多个center是可能的。但在统计过coco数据集后发现，这种情况出现的数量极少，故这种设置对map的性能影响很低。作者也尝试了一个输出点多个center的实验，结果性能没有明显区别。
 
 **centernet对比yolov3主要区别的表格：**
 ||yolov3|centernet|
