@@ -1,7 +1,7 @@
 ## centernet简要介绍
-**若以一句话总结centernet的特点：centernet属于anchor free的目标检测算法，不需要anchor及其附带的nms就可直接检测物体。**
+**一句话总结centernet的特点：anchor free的目标检测算法，不需要nms就可直接检测物体。**
 
-centernet的计算过程为：图像传入resnet，此时经过了32倍下采样；再经过3次反卷积和DCN模块，此时又经过了8倍上采样；最后再传入输出层，得到物体坐标。
+CenterNet的一大優點是"簡單"，其大致计算过程为：图像传入backbone network(32倍下采样)；再经过3次反卷积(8倍上采样)；传入输出层得到 (i) Class heatmap, (ii) 物体坐标寬高。
 
 **yolov3是现在比较有代表性的单阶段检测算法，下面对比一下这两种检测算法的主要不同:**
 
