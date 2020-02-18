@@ -3,10 +3,13 @@
 
 CenterNet的一大優點是"簡單"，其大致计算过程为：图像传入backbone network(32倍下采样)；再经过3次反卷积(8倍上采样)；传入输出层得到 (i) Class heatmap, (ii) 物体坐标寬高。
 
+
+<img src="center_as_keypoint" width="600"/>
+
 **yolov3是现在比较有代表性的单阶段检测算法，下面对比一下这两种检测算法的主要不同:**
 
 
-<img src="yolov3.jpg" width="500"/>
+<img src="yolov3.jpg" width="600"/>
 
 1. 典型情况下centernet使用resnet50作为backbone, yolov3使用darknet53。
 2. centernet只有1个输出层，而yolov3有3个输出层。
