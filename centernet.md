@@ -4,11 +4,15 @@
 centernet的计算过程为：图像传入resnet，此时经过了32倍下采样；再经过3次反卷积和DCN模块，此时又经过了8倍上采样；最后再传入输出层，得到物体坐标。
 
 **yolov3是现在比较有代表性的单阶段检测算法，下面对比一下这两种检测算法的主要不同:**
+
+
+![avatar](yolov3.jpg)
+
 1. 典型情况下centernet使用resnet50作为backbone, yolov3使用darknet53。
-1. centernet只有1个输出层，而yolov3有3个输出层。
-2. yolov3的3个输出层借用了FPN的方法，而centernet没有借用。
-3. 最重要的不同点是centernet没有anchor而yolov3有anchor。以coco数据集为例，centernet输出层的通道数为80类概率+2个中心点偏移量+2个宽高数值=84维；yolov3的每个输出层都有3个anchor，每个anchor需要(x, y, w, h, confidence)五个基本参数，所以共有 3 × (5 + 80) = 255维。
-4. 由于yolov3每个输出点上有多个bounding box可能出现，故最后需要nms来排除iou过高的的bounding box。而centernet无需nms。
+2. centernet只有1个输出层，而yolov3有3个输出层。
+3. yolov3的3个输出层借用了FPN的方法，而centernet没有借用。
+4. 最重要的不同点是centernet没有anchor而yolov3有anchor。以coco数据集为例，centernet输出层的通道数为80类概率+2个中心点偏移量+2个宽高数值=84维；yolov3的每个输出层都有3个anchor，每个anchor需要(x, y, w, h, confidence)五个基本参数，所以共有 3 × (5 + 80) = 255维。
+5. 由于yolov3每个输出点上有多个bounding box可能出现，故最后需要nms来排除iou过高的的bounding box。而centernet无需nms。
 
 **centernet的优点：**
 1. anchor free的思想让算法的训练和部署都非常整洁，训练时无anchor，检测时无nms。这是centernet的核心想法，简单有效，值得借鉴。nms由于是集合递归的运算，不容易做并行加速，bounding box随着anchor的增加而增加。nms的不同设置会极大影响检测算法的map。
