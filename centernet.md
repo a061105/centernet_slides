@@ -6,7 +6,7 @@ centernet的计算过程为：图像传入resnet，此时经过了32倍下采样
 **yolov3是现在比较有代表性的单阶段检测算法，下面对比一下这两种检测算法的主要不同:**
 
 
-![avatar](yolov3.jpg=250x)
+![avatar](yolov3.jpg =250x)
 
 1. 典型情况下centernet使用resnet50作为backbone, yolov3使用darknet53。
 2. centernet只有1个输出层，而yolov3有3个输出层。
