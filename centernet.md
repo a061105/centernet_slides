@@ -34,7 +34,7 @@ centernet的计算过程为：图像传入resnet，此时经过了32倍下采样
 |output layer|3|1|
 |nms|true|false|
 
-**centernet与其他算法的性能对比如下 (on Intel i7-8086K CPU, Titan Xp GPU) **
+**centernet与其他算法的性能对比如下(on Intel i7-8086K CPU, Titan Xp GPU):**
 
 
 <img src="centernet_comp.png"  width="300"/>
