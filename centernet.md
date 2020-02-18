@@ -35,4 +35,7 @@ centernet的计算过程为：图像传入resnet，此时经过了32倍下采样
 |nms|true|false|
 
 **centernet与其他算法的性能对比如下**
+<img src="centernet_comp.png" alt="mAP vs Inference time" width="500"/>
+
+
 ![avatar](result.jpg)
