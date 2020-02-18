@@ -37,5 +37,6 @@ centernet的计算过程为：图像传入resnet，此时经过了32倍下采样
 **centernet与其他算法的性能对比如下**
 
 
-<img src="centernet_comp.png"  width="200"/>
+<img src="centernet_comp.png"  width="300"/>
+
 ![avatar](result.jpg)
