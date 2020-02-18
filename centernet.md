@@ -1,6 +1,8 @@
 ## centernet简要介绍
 **一句话总结centernet的特点：anchor free的目标检测算法，不需要nms就可直接检测物体。**
 
+<img src="centernet_struct.png" width="600"/>
+
 CenterNet的一大優點是"簡單"，其大致计算过程为：图像传入backbone network(32倍下采样)；再经过3次反卷积(8倍上采样)；传入输出层得到 (i) 每個類的熱力圖(heatmap), (ii) 物体坐标寬高。其中heatmap中的"Peak"即為object center。
 
 
