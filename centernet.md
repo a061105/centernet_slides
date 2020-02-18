@@ -10,7 +10,7 @@ CenterNet的一大優點是"簡單"，其大致计算过程为：图像传入bac
 
 **yolov3是现在比较有代表性的单阶段检测算法，下面对比一下这两种检测算法的主要不同:**
 
-<img src="yolov3.jpg" width="600"/>
+<img src="yolov3_struct.png" width="600"/>
 
 <img src="yolov3_anchor.png" width="600"/>
 
